@@ -1,4 +1,4 @@
-package io.lexinor.formations.quarkus.dbaccess.panache;
+package io.lexinor.formations.quarkus.dbaccess.panache.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;

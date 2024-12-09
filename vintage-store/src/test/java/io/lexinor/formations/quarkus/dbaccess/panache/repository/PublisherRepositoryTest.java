@@ -1,8 +1,8 @@
-package io.lexinor.formations.quarkus.dbaccess.panache;
+package io.lexinor.formations.quarkus.dbaccess.panache.repository;
 
+import io.lexinor.formations.quarkus.dbaccess.panache.model.Publisher;
 import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;
-import jakarta.transaction.Transactional;
 import java.sql.SQLException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

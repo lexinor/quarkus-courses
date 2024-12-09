@@ -1,5 +1,6 @@
 package io.lexinor.formations.quarkus.dbaccess.jpa;
 
+import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
@@ -14,7 +15,7 @@ public class CustomerRepositoryTest {
   CustomerRepository customerRepository;
 
   @Test
-  @Transactional
+  @TestTransaction
   public void shouldCreateAndFindAnArtist() throws SQLException {
     var customer = new Customer("first name", "last name", "email");
     customerRepository.persist(customer);

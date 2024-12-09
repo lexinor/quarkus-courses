@@ -17,7 +17,7 @@ public class ArtistRepository {
 
   public void persist(final Artist artist) throws SQLException {
     Connection conn = dataSource.getConnection();
-    var sql = "INSERT INTO t_artist (id, name, bio, created_date) VALUES (?, ?, ?, ?)";
+    var sql = "INSERT INTO t_artists (id, name, bio, created_date) VALUES (?, ?, ?, ?)";
     artist.setId(Math.abs(new SecureRandom().nextLong()));
     try (PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setLong(1, artist.getId());
@@ -31,7 +31,7 @@ public class ArtistRepository {
 
   public Artist findById(Long id) throws SQLException {
     Connection conn = dataSource.getConnection();
-    var sql = "SELECT id, name, bio, created_date FROM t_artist WHERE id = ?";
+    var sql = "SELECT id, name, bio, created_date FROM t_artists WHERE id = ?";
     var artist = new Artist();
     try(PreparedStatement ps = conn.prepareStatement(sql)) {
       ps.setLong(1, id);
